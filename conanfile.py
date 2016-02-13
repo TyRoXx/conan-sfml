@@ -3,7 +3,7 @@ import os, shutil
 from conans.tools import download, unzip, check_sha256
 from conans import CMake
 
-class SQLite3Conan(ConanFile):
+class ArbitraryName(ConanFile):
     name = "sfml"
     version = "2.3.2"
     branch = "stable"
