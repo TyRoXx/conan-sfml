@@ -3,7 +3,7 @@ import platform
 import sys
 
 if __name__ == "__main__":
-    os.system('conan export TyRoXx/stable')
+    os.system('conan export TyRoXx/develop')
 
     def test(settings):
         argv =  " ".join(sys.argv[1:])

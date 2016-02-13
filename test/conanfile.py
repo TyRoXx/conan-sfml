@@ -7,7 +7,7 @@ class DefaultNameConan(ConanFile):
     version = "0.1"
     settings = "os", "compiler", "arch", "build_type"
     generators = "cmake"
-    requires = "sfml/2.3.2@TyRoXx/stable"
+    requires = "sfml/2015.8.12@TyRoXx/develop"
 
     def build(self):
         cmake = CMake(self.settings)
