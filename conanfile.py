@@ -30,7 +30,10 @@ class ArbitraryName(ConanFile):
         self.run('cd _build && cmake ../%s -DBUILD_SHARED_LIBS=%s -DCMAKE_INSTALL_PREFIX=../install %s' %
             (self.ZIP_FOLDER_NAME, "ON" if self.options.shared else "OFF", cmake.command_line)
         )
-        self.run("cd _build && cmake --build . %s -- -j12 install" % cmake.build_config)
+        if self.settings.os == "Windows":
+            self.run("cd _build && cmake --build . %s --target install --config %s" % (cmake.build_config, self.settings.build_type))
+        else:
+            self.run("cd _build && cmake --build . %s -- -j2 install" % cmake.build_config)
 
     def package(self):
         self.copy("*.*", "include", "install/include", keep_path=True)
