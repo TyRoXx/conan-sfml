@@ -5,7 +5,7 @@ from conans import CMake
 
 class ArbitraryName(ConanFile):
     name = "sfml"
-    version = "2.3.2"
+    version = "2015.8.12"
     branch = "stable"
     settings = "os", "compiler", "arch", "build_type"
     options = {"shared": [True, False]}
@@ -14,13 +14,13 @@ class ArbitraryName(ConanFile):
     license = "zlib/png"
     url="http://github.com/TyRoXx/conan-sfml"
     exports = ["CMakeLists.txt"]
-    ZIP_FOLDER_NAME = "SFML-2.3.2"
+    ZIP_FOLDER_NAME = "SFML-6b9781475d70272538a5ce48ad96f583f3a373c3"
     so_version = '2.3'
 
     def source(self):
-        zip_name = "SFML-2.3.2-sources.zip"
-        download("http://www.sfml-dev.org/files/%s" % zip_name, zip_name)
-        check_sha256(zip_name, "03fe79943c48222037f1126a581b12c95a4dd53168881907964695c5ec3dc395")
+        zip_name = "6b9781475d70272538a5ce48ad96f583f3a373c3.zip"
+        download("https://github.com/SFML/SFML/archive/%s" % zip_name, zip_name)
+        check_sha256(zip_name, "78a646ed839e6ef36b21d73ac509403729a0a22f4d405f30bd3e3cdf0704d418")
         unzip(zip_name)
         os.unlink(zip_name)
 
